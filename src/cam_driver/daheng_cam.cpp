@@ -287,26 +287,6 @@ namespace rmoss_entity_cam
     }
 
     /**
-     * @brief 捕获图片和图片时间戳
-     * 
-     * @param image CV::MAT格式传入的图片
-     * @param timestamp_ms 时间戳（ms）
-     * @return true 成功
-     * @return false 失败
-     */
-    bool DaHengCam::grab_image(cv::Mat &image, double &timestamp_ms)
-    {
-        bool result = this->grab_image(image);
-        if (!result)
-        {
-            return false;
-        }
-        // TODO: 确定时间戳类型和具体情况, 相机内部获取为纳秒级
-        timestamp_ms = this->_pFrameBuffer->nTimestamp / 1000000;
-        return true;
-    }
-
-    /**
      * @brief 加载Config文件
      * 
      * @param path Config文件路径
