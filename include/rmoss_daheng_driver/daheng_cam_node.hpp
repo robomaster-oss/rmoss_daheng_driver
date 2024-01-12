@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef RM_CAM__DAHENG_CAM_NODE_HPP
-#define RM_CAM__DAHENG_CAM_NODE_HPP
+#ifndef RMOSS_DAHENG_DRIVER__DAHENG_CAM_NODE_HPP_
+#define RMOSS_DAHENG_DRIVER__DAHENG_CAM_NODE_HPP_
 
 #include <string>
 #include <memory>
@@ -25,23 +25,23 @@
 
 namespace rmoss_entity_cam
 {
-    // Node warpper for DaHengCamera
-    class DaHengCamNode
-    {
-    public:
-        explicit DaHengCamNode(
-            const rclcpp::NodeOptions &options = rclcpp::NodeOptions());
+// Node warpper for DaHengCamera
+class DaHengCamNode
+{
+public:
+  explicit DaHengCamNode(
+    const rclcpp::NodeOptions & options = rclcpp::NodeOptions());
 
-        rclcpp::node_interfaces::NodeBaseInterface::SharedPtr get_node_base_interface()
-        {
-            return node_->get_node_base_interface();
-        }
+  rclcpp::node_interfaces::NodeBaseInterface::SharedPtr get_node_base_interface()
+  {
+    return node_->get_node_base_interface();
+  }
 
-    private:
-        rclcpp::Node::SharedPtr node_;
-        std::shared_ptr<DaHengCam> cam_dev_;
-        std::shared_ptr<rmoss_cam::CamServer> cam_server_;
-    };
-}
+private:
+  rclcpp::Node::SharedPtr node_;
+  std::shared_ptr<DaHengCam> cam_dev_;
+  std::shared_ptr<rmoss_cam::CamServer> cam_server_;
+};
+}  // namespace rmoss_entity_cam
 
-#endif // RM_CAM__DAHENG_CAM_NODE_HPP
+#endif  // RMOSS_DAHENG_DRIVER__DAHENG_CAM_NODE_HPP_

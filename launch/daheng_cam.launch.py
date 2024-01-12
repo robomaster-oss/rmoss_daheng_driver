@@ -12,22 +12,18 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-'''
-Author: holakk
-Date: 2021-11-06 19:47:28
-LastEditors: holakk
-LastEditTime: 2021-11-07 22:22:01
-Description: file content
-'''
+
 import os
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
+
 def generate_launch_description():
 
-    param_path = os.path.join(get_package_share_directory("rmoss_daheng_driver"), "config/cam_param.yaml")
+    param_path = os.path.join(
+        get_package_share_directory("rmoss_daheng_driver"), "config/cam_param.yaml")
 
     daheng_cam_node = Node(
         package="rmoss_daheng_driver",

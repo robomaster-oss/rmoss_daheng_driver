@@ -1,21 +1,21 @@
 name: Build and Test (Galactic)
 on:
   push:
-    branches: [ main ]
+    branches: [ galactic ]
   pull_request:
-    branches: [ main ]
+    branches: [ galactic ]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    container:
+      image: rostooling/setup-ros-docker:ubuntu-focal-ros-galactic-desktop-latest
     steps:
+      - name: Setup git-lfs
+        run: apt-get update && apt-get install -y git-lfs && rm -rf /var/lib/apt/lists/*
       - name: Check out
         uses: actions/checkout@v2.3.4
         with:
           fetch-depth: 0
-      - name: Setup ROS 2
-        uses: ros-tooling/setup-ros@v0.2
-        with:
-          required-ros-distributions: galactic
       - name: Build rmoss_daheng_driver
         uses: ros-tooling/action-ros-ci@v0.2
         with:
