@@ -10,7 +10,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     container:
-      image: rostooling/setup-ros-docker:ubuntu-focal-ros-galactic-desktop-latest
+      image: osrf/ros:galactic-desktop-focal
     steps:
       - name: Setup git-lfs
         run: apt-get update && apt-get install -y git-lfs && rm -rf /var/lib/apt/lists/*
