@@ -20,8 +20,9 @@ jobs:
           fetch-depth: 0
           lfs: true
       - name: Build rmoss_daheng_driver
-        uses: ros-tooling/action-ros-ci@v0.2
+        uses: ros-tooling/action-ros-ci@v0.3
         with:
+          package-name: rmoss_daheng_driver
           target-ros2-distro: galactic
           vcs-repo-file-url: "${{ github.workspace }}/dependency.repos"
           skip-tests: true
