@@ -24,12 +24,12 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rmoss_daheng_driver/daheng_cam_node.hpp"
 
-int main(int argc, char **argv)
+int main(int argc, char ** argv)
 {
-    rclcpp::init(argc, argv);
-    auto node = std::make_shared<rmoss_entity_cam::DaHengCamNode>();
-    rclcpp::spin(node->get_node_base_interface());
-    rclcpp::shutdown();
+  rclcpp::init(argc, argv);
+  auto node = std::make_shared<rmoss_entity_cam::DaHengCamNode>();
+  rclcpp::spin(node->get_node_base_interface());
+  rclcpp::shutdown();
 
-    return 0;
+  return 0;
 }

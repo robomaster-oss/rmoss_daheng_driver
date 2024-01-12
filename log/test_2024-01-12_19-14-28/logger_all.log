@@ -1,0 +1,44 @@
+[0.763s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'test', '--return-code-on-test-failure', '--event-handlers', 'console_direct+', '--packages-up-to', 'rmoss_daheng_driver']
+[0.763s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='test', build_base='build', install_base='install', merge_install=False, test_result_base=None, retest_until_fail=0, retest_until_pass=0, abort_on_error=False, return_code_on_test_failure=True, executor='parallel', parallel_workers=16, event_handlers=['console_direct+'], ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=['rmoss_daheng_driver'], packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], ctest_args=None, python_testing=None, pytest_args=None, pytest_with_coverage=False, unittest_args=None, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fc573fe8be0>, verb_extension=<colcon_core.verb.test.TestVerb object at 0x7fc573f94ac0>, main=<bound method TestVerb.main of <colcon_core.verb.test.TestVerb object at 0x7fc573f94ac0>>)
+[0.796s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.796s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.796s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.796s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.796s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.796s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.796s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mpl/code/rmoss_ws/src/rmoss_daheng_driver'
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.797s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.818s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'rmoss_daheng_driver'
+[0.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'ctest_args' from command line to 'None'
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'python_testing' from command line to 'None'
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'pytest_args' from command line to 'None'
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'pytest_with_coverage' from command line to 'False'
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'unittest_args' from command line to 'None'
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'retest_until_pass' from command line to '0'
+[0.862s] Level 5:colcon.colcon_core.verb:set package 'rmoss_daheng_driver' test argument 'retest_until_fail' from command line to '0'
+[0.862s] DEBUG:colcon.colcon_core.verb.test:Testing package 'rmoss_daheng_driver' with the following arguments: {'build_base': '/home/mpl/code/rmoss_ws/src/rmoss_daheng_driver/build/rmoss_daheng_driver', 'ctest_args': None, 'install_base': '/home/mpl/code/rmoss_ws/src/rmoss_daheng_driver/install/rmoss_daheng_driver', 'path': '/home/mpl/code/rmoss_ws/src/rmoss_daheng_driver', 'pytest_args': None, 'pytest_with_coverage': False, 'python_testing': None, 'retest_until_fail': 0, 'retest_until_pass': 0, 'test_result_base': None, 'unittest_args': None}
+[0.872s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.883s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.883s] INFO:colcon.colcon_ros.task.ament_cmake.test:Testing ROS package in '/home/mpl/code/rmoss_ws/src/rmoss_daheng_driver' with build type 'ament_cmake'
+[0.883s] INFO:colcon.colcon_cmake.task.cmake.test:Testing CMake package in '/home/mpl/code/rmoss_ws/src/rmoss_daheng_driver'
+[0.896s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.896s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.896s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with 'Has this package been built before?'
+[0.896s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.911s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.911s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.911s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.920s] DEBUG:colcon.colcon_core.event_reactor:joined thread
