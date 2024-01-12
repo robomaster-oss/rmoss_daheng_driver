@@ -22,6 +22,10 @@
 
 #include "rmoss_daheng_driver/daheng_cam_node.hpp"
 
+#include <memory>
+#include <vector>
+#include <string>
+
 namespace rmoss_entity_cam
 {
 DaHengCamNode::DaHengCamNode(const rclcpp::NodeOptions & options)

@@ -23,6 +23,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 
 namespace rmoss_entity_cam
 {
