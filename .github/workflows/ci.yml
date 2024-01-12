@@ -1,9 +1,9 @@
 name: Build and Test (Humble)
 on:
   push:
-    branches: [ galactic ]
+    branches: [ humble ]
   pull_request:
-    branches: [ galactic ]
+    branches: [ humble ]
   schedule:
     - cron: '0 21 * * *'
 jobs:
