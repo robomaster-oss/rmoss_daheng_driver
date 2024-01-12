@@ -24,25 +24,24 @@ set(dependencies
   rmoss_cam
 )
 
-# options
-option(WITH_GXISDK "Build with DaHengGxiSDK" ON)
-
 message(STATUS "System architecture: ${CMAKE_SYSTEM_PROCESSOR}")
 
 # DaHengGxiSDK
-if(WITH_GXISDK)
-    include_directories("dependencies/DaHengGxiSDK/include")
-    if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
-        set(GXI_LIB_DIR "dependencies/DaHengGxiSDK/lib/x86_64")
-        link_directories("dependencies/DaHengGxiSDK/lib/x86_64")
-    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
-        set(GXI_LIB_DIR "dependencies/DaHengGxiSDK/lib/armv8")
-        link_directories("dependencies/DaHengGxiSDK/lib/armv8")
-    else()
-        message(FATAL_ERROR "Unkown host system architecture: ${CMAKE_HOST_SYSTEM_PROCESSOR}!")
-    endif()
-    set(GXI_LIB_SO "${PROJECT_SOURCE_DIR}/${GXI_LIB_DIR}/libgxiapi.so")
+include_directories("dependencies/DaHengGxiSDK/include")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
+    set(GXI_LIB_DIR "dependencies/DaHengGxiSDK/lib/x86_64")
+    link_directories("dependencies/DaHengGxiSDK/lib/x86_64")
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+    set(GXI_LIB_DIR "dependencies/DaHengGxiSDK/lib/armv8")
+    link_directories("dependencies/DaHengGxiSDK/lib/armv8")
+else()
+    message(FATAL_ERROR "Unkown host system architecture: ${CMAKE_HOST_SYSTEM_PROCESSOR}!")
 endif()
+set(GXI_LIB_SO "${PROJECT_SOURCE_DIR}/${GXI_LIB_DIR}/libgxiapi.so")
+set(GXI_CTI_LIBS
+  "${PROJECT_SOURCE_DIR}/${GXI_LIB_DIR}/GxGVTL.cti"
+  "${PROJECT_SOURCE_DIR}/${GXI_LIB_DIR}/GxU3VTL.cti"
+)
 
 # Include
 include_directories(include)
@@ -57,10 +56,7 @@ add_library(${PROJECT_NAME} SHARED
     "src/daheng_cam_node.cpp"
 )
 
-# DaHeng相机
-if(WITH_GXISDK)
-    target_link_libraries(${PROJECT_NAME} gxiapi pthread)
-endif()
+target_link_libraries(${PROJECT_NAME} gxiapi pthread)
 
 ament_target_dependencies(${PROJECT_NAME} ${dependencies})
 ament_export_targets(${PROJECT_NAME} HAS_LIBRARY_TARGET)
@@ -75,7 +71,7 @@ rclcpp_components_register_nodes(${PROJECT_NAME} "rmoss_cam::DaHengCamNode")
 
 # install cam driver lib
 install(
-    FILES ${GXI_LIB_SO}
+    FILES ${GXI_LIB_SO} ${GXI_CTI_LIBS}
     DESTINATION lib
 )
 
