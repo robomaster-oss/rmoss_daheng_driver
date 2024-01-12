@@ -107,7 +107,7 @@ bool DaHengCam::open()
   uint32_t nDeviceNum = 0;
   stOpenParam.openMode = GX_OPEN_SN;
   stOpenParam.accessMode = GX_ACCESS_EXCLUSIVE;
-  stOpenParam.pszContent = reinterpret_cast<char *>(this->_camera_sn.c_str());
+  stOpenParam.pszContent = const_cast<char *>(this->_camera_sn.c_str());
 
   // 获取相机列表
   GXstatus = GXUpdateDeviceList(&nDeviceNum, 1000);
